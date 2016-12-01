@@ -15,19 +15,14 @@ zone = numpy.zeros(6)
 zone_lebal = ['total','<20','20 ~ 30','30 ~ 40','40 ~ 50','>50']
 def cal(val):
    if val <= 20:
-      #under_twenty+=1
       zone[1] += 1
    if val > 20 and val <= 30:
-      #twenty_thirty+=1
       zone[2] += 1
    if val > 30 and val <= 40:
-      #thirty_fourty+=1
       zone[3] += 1
    if val > 40 and val <= 50:
-      #fourty_fifty+=1
       zone[4] += 1
    if val > 50:
-      #above_fifty+=1
       zone[5] += 1
    
    zone[0] += 1
@@ -46,9 +41,6 @@ while True:
             a = line.find('[')
             b = line.find('<')
             c = line.find('>')
-            #print line[a+1:b] + " " + line[b+1:c]
-            #print float(line[a+1:b]) + float(line[b+1:c])
-            #list_x.append(float(line[a+1:b])*1000000)
             list_y.append(float(line[b+1:c])*1000000)
 
          if 'str' in line:
@@ -64,15 +56,11 @@ while True:
    plt.ion()
    line, = plt.plot(list_x, list_y, 'r-')
 
-   #plt.axis([min(list_x), max(list_x), 0, int(max(list_y))+10])
-
    plt.axis([0, 20, 0, 100])
    
    cal(list_y[0])
    print list_y
 
-   #print "< 20 % :" + str(under_twenty/total*100) + "%"
-   #print ">40: " + str(float(fourty_fifty)/float(total)*100) + "%"
    showResult()
 
    if len(list_x) == len(list_y):
