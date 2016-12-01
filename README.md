@@ -77,33 +77,24 @@ $mv plotplot/host/ ~/
 
 2. Record logs in VM
 
-
 [guest]$./record.py &
-
 
 3. Keep VM running
 
-
 [guest]$./loop &
 
-
 4. Background traffic in VM
-
 
 [guest]$screen
 
 
 [guest]$ping -i 1 (IP)
 
-
 5. Fetch logs form VM
-
 
 [host]$./pull.py &
 
-
 6. Execute plot scripts
-
 
 -Dynamic plot-
 
@@ -116,7 +107,6 @@ $mv plotplot/host/ ~/
 
 
 [host]$./Plotall.py
-
 
 
 # Troublestooting
