@@ -19,6 +19,6 @@
 *.mak
 *.mod.c
 *.bak
-
+tmp
 #for Test directory
 *.result
